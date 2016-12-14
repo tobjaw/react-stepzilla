@@ -1,3 +1,12 @@
 {
-  "presets": ["react", "es2015"]
+  "presets": [
+    "babel-polyfill",
+    "es2015",
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread"
+  ]
 }
