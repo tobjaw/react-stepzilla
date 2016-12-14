@@ -10,9 +10,9 @@ export default class StepZilla extends Component {
     dontValidate: false,
     preventEnterSubmission: false,
     startAtStep: 0,
-    nextBtnText: 'Next',
-    nextTextOnFinalActionStep: 'Next',
-    prevBtnText: 'Previous',
+    nextBtnText: 'Weiter',
+    nextTextOnFinalActionStep: 'Weiter',
+    prevBtnText: 'Zurück',
   }
 
   constructor(props) {
