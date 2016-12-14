@@ -1,6 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class StepZilla extends Component {
+
+  static defaultProps = {
+    showSteps: true,
+    showNavigation: true,
+    stepsNavigation: true,
+    prevBtnOnLastStep: true,
+    dontValidate: false,
+    preventEnterSubmission: false,
+    startAtStep: 0,
+    nextBtnText: 'Next',
+    nextTextOnFinalActionStep: 'Next',
+    prevBtnText: 'Previous',
+  }
+
   constructor(props) {
     super(props);
 
@@ -183,16 +197,3 @@ export default class StepZilla extends Component {
     );
   }
 }
-
-StepZilla.defaultProps = {
-  showSteps: true,
-  showNavigation: true,
-  stepsNavigation: true,
-  prevBtnOnLastStep: true,
-  dontValidate: false,
-  preventEnterSubmission: false,
-  startAtStep: 0,
-  nextBtnText: 'Next',
-  nextTextOnFinalActionStep: 'Next',
-  prevBtnText: 'Previous',
-};
