@@ -9,7 +9,7 @@ export default class StepZilla extends Component {
       showNextBtn: true,
       compState: this.props.startAtStep,
       navState: this._getNavStates(0, this.props.steps.length),
-      nextStepText: 'Next'
+      nextStepText: this.props.nextBtnText
     };
 
     this.hidden = {
@@ -173,7 +173,7 @@ export default class StepZilla extends Component {
 
           <button style={this.state.showPreviousBtn ? {} : this.hidden}
                   className="btn btn-primary btn-lg pull-left"
-                  onClick={this.previous}>{this.prevBtnText}</button>
+                  onClick={this.previous}>{this.props.prevBtnText}</button>
 
           <button style={this.state.showNextBtn ? {} : this.hidden}
                   className="btn btn-primary btn-lg pull-right"
