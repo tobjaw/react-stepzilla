@@ -42,7 +42,7 @@ export default class StepZilla extends Component {
 
   _checkNavState(currentStep){
     if (currentStep > 0 && currentStep !== this.props.steps.length - 1) {
-      let correctNextText = 'Next';
+      let correctNextText = this.props.nextBtnText;
 
       if (currentStep == this.props.steps.length - 2) {
         // we are in the one before final step
@@ -173,7 +173,7 @@ export default class StepZilla extends Component {
 
           <button style={this.state.showPreviousBtn ? {} : this.hidden}
                   className="btn btn-primary btn-lg pull-left"
-                  onClick={this.previous}>Previous</button>
+                  onClick={this.previous}>{this.prevBtnText}</button>
 
           <button style={this.state.showNextBtn ? {} : this.hidden}
                   className="btn btn-primary btn-lg pull-right"
@@ -192,5 +192,7 @@ StepZilla.defaultProps = {
   dontValidate: false,
   preventEnterSubmission: false,
   startAtStep: 0,
-  nextTextOnFinalActionStep: "Next"
+  nextBtnText: 'Next',
+  nextTextOnFinalActionStep: 'Next',
+  prevBtnText: 'Previous',
 };
