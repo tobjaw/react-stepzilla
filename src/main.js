@@ -16,6 +16,9 @@ export default class StepZilla extends Component {
   }
 
   constructor(props) {
+
+    console.log('using latest version')
+
     super(props);
 
     this.state = {
