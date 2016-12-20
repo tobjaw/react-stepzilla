@@ -217,22 +217,21 @@ var StepZilla = function (_Component) {
           'div',
           { style: this.props.showNavigation ? {} : this.hidden, className: 'footer-buttons' },
           _react2.default.createElement(
-            'button',
-            { style: this.state.showPreviousBtn ? {} : this.hidden,
-              className: 'btn btn-primary btn-lg pull-left',
-              onClick: this.previous },
+            _reactBootstrap.Button,
+            {
+              bsStyle: 'primary',
+              disabled: !this.state.showPreviousBtn,
+              onClick: this.previous
+            },
             this.props.prevBtnText
           ),
           _react2.default.createElement(
             _reactBootstrap.Button,
-            null,
-            'Test'
-          ),
-          _react2.default.createElement(
-            'button',
-            { style: this.state.showNextBtn ? {} : this.hidden,
-              className: 'btn btn-primary btn-lg pull-right',
-              onClick: this.next },
+            {
+              bsStyle: 'primary',
+              disabled: !this.state.showNextBtn,
+              onClick: this.next
+            },
             this.state.nextStepText
           )
         )
