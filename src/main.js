@@ -13,6 +13,7 @@ export default class StepZilla extends Component {
     nextBtnText: 'Weiter',
     nextTextOnFinalActionStep: 'Weiter',
     prevBtnText: 'Zurück',
+    pageChanged: () => {},
   }
 
   static propTypes = {
@@ -138,6 +139,7 @@ export default class StepZilla extends Component {
     // if its a form component, it should have implemeted a public isValidated class. If not then continue
     if (this.props.dontValidate || typeof this.refs.activeComponent.isValidated == 'undefined' || this.refs.activeComponent.isValidated()) {
       this._setNavState(this.state.compState + 1);
+      console.log(this)
       this.props.pageChanged()
     }
   }

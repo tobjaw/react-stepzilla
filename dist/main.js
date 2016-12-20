@@ -146,6 +146,7 @@ var StepZilla = function (_Component) {
       // if its a form component, it should have implemeted a public isValidated class. If not then continue
       if (this.props.dontValidate || typeof this.refs.activeComponent.isValidated == 'undefined' || this.refs.activeComponent.isValidated()) {
         this._setNavState(this.state.compState + 1);
+        console.log(this);
         this.props.pageChanged();
       }
     }
@@ -246,7 +247,8 @@ StepZilla.defaultProps = {
   startAtStep: 0,
   nextBtnText: 'Weiter',
   nextTextOnFinalActionStep: 'Weiter',
-  prevBtnText: 'Zurück'
+  prevBtnText: 'Zurück',
+  pageChanged: function pageChanged() {}
 };
 StepZilla.propTypes = {
   pageChanged: _react.PropTypes.func
