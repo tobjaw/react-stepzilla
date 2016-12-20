@@ -24,8 +24,6 @@ var StepZilla = function (_Component) {
   function StepZilla(props) {
     _classCallCheck(this, StepZilla);
 
-    console.log('using latest version');
-
     var _this = _possibleConstructorReturn(this, (StepZilla.__proto__ || Object.getPrototypeOf(StepZilla)).call(this, props));
 
     _this.state = {
@@ -148,6 +146,7 @@ var StepZilla = function (_Component) {
       // if its a form component, it should have implemeted a public isValidated class. If not then continue
       if (this.props.dontValidate || typeof this.refs.activeComponent.isValidated == 'undefined' || this.refs.activeComponent.isValidated()) {
         this._setNavState(this.state.compState + 1);
+        this.props.pageChanged();
       }
     }
   }, {
@@ -155,6 +154,7 @@ var StepZilla = function (_Component) {
     value: function _previous() {
       if (this.state.compState > 0) {
         this._setNavState(this.state.compState - 1);
+        this.props.pageChanged();
       }
     }
   }, {
@@ -247,5 +247,8 @@ StepZilla.defaultProps = {
   nextBtnText: 'Weiter',
   nextTextOnFinalActionStep: 'Weiter',
   prevBtnText: 'Zurück'
+};
+StepZilla.propTypes = {
+  pageChanged: _react.PropTypes.func
 };
 exports.default = StepZilla;

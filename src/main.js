@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes as T } from 'react';
 
 export default class StepZilla extends Component {
 
@@ -15,9 +15,11 @@ export default class StepZilla extends Component {
     prevBtnText: 'Zurück',
   }
 
-  constructor(props) {
+  static propTypes = {
+    pageChanged: T.func,
+  }
 
-    console.log('using latest version')
+  constructor(props) {
 
     super(props);
 
@@ -136,12 +138,14 @@ export default class StepZilla extends Component {
     // if its a form component, it should have implemeted a public isValidated class. If not then continue
     if (this.props.dontValidate || typeof this.refs.activeComponent.isValidated == 'undefined' || this.refs.activeComponent.isValidated()) {
       this._setNavState(this.state.compState + 1);
+      this.props.pageChanged()
     }
   }
 
   _previous() {
     if (this.state.compState > 0) {
       this._setNavState(this.state.compState - 1);
+      this.props.pageChanged()
     }
   }
 
