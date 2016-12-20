@@ -24,6 +24,8 @@ var StepZilla = function (_Component) {
   function StepZilla(props) {
     _classCallCheck(this, StepZilla);
 
+    console.log('using latest version');
+
     var _this = _possibleConstructorReturn(this, (StepZilla.__proto__ || Object.getPrototypeOf(StepZilla)).call(this, props));
 
     _this.state = {
