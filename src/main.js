@@ -1,4 +1,5 @@
 import React, { Component, PropTypes as T } from 'react';
+import { Button } from 'react-bootstrap';
 
 export default class StepZilla extends Component {
 
@@ -196,6 +197,8 @@ export default class StepZilla extends Component {
           <button style={this.state.showPreviousBtn ? {} : this.hidden}
                   className="btn btn-primary btn-lg pull-left"
                   onClick={this.previous}>{this.props.prevBtnText}</button>
+
+          <Button>Test</Button>
 
           <button style={this.state.showNextBtn ? {} : this.hidden}
                   className="btn btn-primary btn-lg pull-right"
