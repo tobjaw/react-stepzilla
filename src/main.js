@@ -141,7 +141,7 @@ export default class StepZilla extends Component {
     if (this.props.dontValidate ||
         typeof this.refs.activeComponent.isValidated == 'undefined' ||
         this.refs.activeComponent.isValidated()) {
-      console.log(this.refs.activeComponent)
+      console.log(this.props)
       this._setNavState(this.state.compState + 1);
       this.props.pageChanged()
     }
