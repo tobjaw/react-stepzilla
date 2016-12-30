@@ -141,7 +141,6 @@ export default class StepZilla extends Component {
     if (this.props.dontValidate ||
         typeof this.refs.activeComponent.isValidated == 'undefined' ||
         this.refs.activeComponent.isValidated()) {
-      console.log('props', this.refs.activeComponent)
       this._setNavState(this.state.compState + 1);
       this.props.pageChanged()
     }
@@ -181,8 +180,6 @@ export default class StepZilla extends Component {
           this.jumpToStep(t);
         }
     });
-
-    console.log('comp to render', compToRender)
 
     return (
       <div className="multi-step full-height" onKeyDown={this.handleKeyDown}>
